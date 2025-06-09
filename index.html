@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganesh Grains - Professional Inventory Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Ganesh Grains - Inventory Management</h1>
+  </header>
+
+  <div class="container">
+    <div class="form-container">
+      <h2>Add New Item</h2> 
+      <form id="addItemForm">
+        <input type="text" id="itemName" placeholder="Item Name" required />
+        <input type="number" id="itemPrice" placeholder="Price per Unit" step="0.01" min="0" required />
+        <input type="number" id="itemQty" placeholder="Quantity" min="0" required />
+        <select id="qtyUnit" required>
+          <option value="" disabled selected>Select Unit</option>
+          <option value="kg">Kilograms (kg)</option>
+          <option value="g">Grams (g)</option>
+        </select>
+        <input type="submit" value="Add Item" />
+      </form>
+      <p class="note">Note: 1 bag is assigned per 30kg per item (e.g., 30kg = 1 bag, 60kg = 2 bags).</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price (₹)</th>
+          <th>Quantity</th>
+          <th>Bags</th>
+          <th>Total (₹)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody">
+        <!-- Items will populate here -->
+      </tbody>
+    </table>
+
+    <div class="summary">
+      <p><strong>Total Amount:</strong> ₹<span id="totalAmount">0.00</span></p>
+      <p><strong>Total Bags:</strong> <span id="totalBags">0</span></p>
+    </div>
+
+    <a
+      class="whatsapp"
+      href="#"
+      id="whatsappShare"
+      target="_blank"
+    >Share via WhatsApp</a>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
